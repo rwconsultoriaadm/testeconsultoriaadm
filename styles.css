@@ -1,0 +1,195 @@
+/* Variáveis para fácil modificação */
+:root {
+    --primary-color: #1a1a1a;
+    --secondary-color: #007acc;
+    --background-color: #f4f4f4;
+    --text-color: #333;
+    --font-size-base: 16px;
+    --font-size-title: 2.5rem;
+    --font-size-subtitle: 1.5rem;
+    --section-padding: 4rem;
+    --container-width: 1200px;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Corpo */
+body {
+    line-height: 1.6;
+    font-size: var(--font-size-base);
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: auto;
+    padding: 0 2rem;
+}
+
+/* Cabeçalho */
+header {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 0rem 0; /* Altura do cabeçalho */
+    text-align: center; /* Alinha todo o conteúdo do cabeçalho ao centro */
+}
+
+/* Logo centralizada */
+.logo {
+    width: 250px; /* Tamanho da logo ajustado para maior */
+    height: auto; /* Mantém a proporção */
+    margin: 0 auto; /* Centraliza a logo */
+    display: block; /* Garante que a logo seja tratada como bloco */
+}
+
+/* Navegação */
+nav {
+    margin-top: -3rem; /* Ajuste negativo para puxar a navegação mais próxima da logo */
+}
+
+nav ul {
+    display: flex;
+    justify-content: center; /* Centraliza a navegação */
+    list-style: none;
+    flex-wrap: wrap; /* Permite que os itens da lista se movam para a próxima linha se não houver espaço */
+}
+
+nav ul li {
+    margin: 0 1rem; /* Espaçamento entre os itens da navegação */
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: var(--font-size-subtitle);
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+/* Hero */
+.hero {
+    background-color: var(--secondary-color);
+    color: white;
+    text-align: center;
+    padding: var(--section-padding);
+}
+
+.hero h2 {
+    font-size: var(--font-size-title);
+}
+
+.hero p {
+    margin: 1rem 0; /* Adiciona margem para o texto do hero */
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--secondary-color);
+}
+
+/* Seções */
+.section {
+    padding: var(--section-padding) 0;
+    text-align: center;
+}
+
+h2 {
+    font-size: var(--font-size-title);
+    margin-bottom: 2rem;
+}
+
+/* Estilo para textos nas seções */
+.section p {
+    margin: 1rem 0; /* Adiciona margem em cima e embaixo dos parágrafos */
+}
+
+/* Serviço e Depoimentos */
+.service-list {
+    display: flex; /* Mantém os serviços lado a lado */
+    overflow-x: auto; /* Adiciona rolagem horizontal */
+    padding: 1rem 0; /* Adiciona padding vertical */
+}
+
+.service-item {
+    min-width: 250px; /* Largura mínima para cada item de serviço */
+    margin: 0 1rem; /* Margem entre os itens */
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para ícones de contato */
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.contact-icons a {
+    font-size: 2rem; /* Tamanho do ícone */
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.contact-icons a:hover {
+    color: var(--secondary-color);
+}
+
+/* Rodapé */
+footer {
+    background: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px; /* Reduz o tamanho da fonte para telas menores */
+    }
+
+    .container {
+        padding: 1rem; /* Ajusta o padding em dispositivos móveis */
+    }
+
+    .logo {
+        width: 150px; /* Ajuste o tamanho da logo para telas menores */
+    }
+
+    nav ul {
+        flex-direction: column; /* Alinha os itens da navegação em coluna em telas menores */
+        align-items: center; /* Centraliza os itens na coluna */
+    }
+
+    .service-list {
+        flex-direction: column; /* Alinha os serviços em coluna em telas menores */
+    }
+
+    .service-item {
+        min-width: auto; /* Remove a largura mínima em telas menores */
+        margin: 1rem 0; /* Adiciona margem vertical entre os itens */
+    }
+}
